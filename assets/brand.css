@@ -153,5 +153,5 @@ details.adv { margin-top: 4px; } details.adv summary { cursor: pointer; font-fam
 @media print {
   header.nav, footer.site, .gate, .no-print, .theme-toggle { display: none !important; }
   body { background: #fff; color: #000; font-size: 12pt; } .chk li { break-inside: avoid; } .phase { break-inside: avoid-page; }
-  .page-head .blob { display: none; }
+  .page-head .blob, .crumb { display: none; }
 }

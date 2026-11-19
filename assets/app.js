@@ -24,6 +24,7 @@ window.wireGates = function () {
       err.textContent = '';
       var src = f.getAttribute('data-gate');
       if (window.gateSource) src = window.gateSource(src);
+      try { var q = new URLSearchParams(location.search).get('src'); if (q) src += '|' + q.slice(0, 30); } catch (x) {}
       window.sendSignup({ email: em.value.trim(), name: nm ? nm.value.trim() : '', source: src }).then(function (ok) {
         if (!ok) { err.textContent = 'Something went wrong. Please try again.'; return; }
         try { localStorage.setItem('as-email-given', '1'); } catch (x) {}
