@@ -50,5 +50,5 @@ Push to `main`; GitHub Pages redeploys in about a minute.
 ### To do in your own accounts (cannot be done from the repo)
 1. Google Search Console: add the property `https://hafnafkaz.github.io/abdulrahman-suddy/`, verify it, then submit `sitemap.xml`.
 2. Bing Webmaster Tools: import from Search Console.
-3. Strongly consider a custom domain (for example abdulrahmansuddy.com). A project site on `github.io` shares authority with the whole `hafnafkaz.github.io` domain, and `robots.txt` and `sitemap` can only live at the domain root on a custom domain.
+3. Strongly consider a custom domain (for example abdulrahmansuddy.com). A project site on `github.io` sits under the shared `hafnafkaz.github.io` domain, and search engines only read `robots.txt` from the domain root, which this repo cannot control. A custom domain fixes that and builds authority under your own name.
 4. Link to these guides from your Instagram, TikTok, YouTube and LinkedIn bios and posts. Links from your own profiles help search engines and AI tools trust the pages.
