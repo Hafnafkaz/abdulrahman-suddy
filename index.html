@@ -613,14 +613,13 @@
           <li>Come with the decision or question you're weighing</li>
           <li>You'll leave with a clear next step</li>
         </ul>
-        <div><a class="btn primary" href="[GOOGLE_CALENDAR_BOOKING_URL]" target="_blank" rel="noopener">Book an appointment
+        <div><a class="btn primary" id="bookBtn" href="#book" target="_blank" rel="noopener">Book an appointment
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 6h14a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"></path></svg>
         </a></div>
       </div>
-      <div class="booking-embed reveal">
-        <!-- When your Google Calendar appointment schedule is ready, paste its embed iframe here and delete the .booking-ph block below.
-             In Google Calendar: Create ▸ Appointment schedule ▸ set it up ▸ Share ▸ copy the "Embed" code, OR copy the booking page link into the "Book an appointment" button above.
-             Example: <iframe src="https://calendar.google.com/calendar/appointments/schedules/XXXXXXXX?gv=true"></iframe> -->
+      <div class="booking-embed reveal" id="bookEmbed">
+        <!-- Booking is configured in SITE_CONFIG (BOOKING_URL / BOOKING_EMBED_URL) in the first <script> below. -->
+
         <div class="booking-ph">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18M5 6h14a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"></path><path d="M9 16l2 2 4-4"></path></svg></div>
           <h3>Google Calendar booking</h3>
@@ -642,7 +641,7 @@
           <p>Occasional thinking on valuation, ownership, structuring and succession — plus new resources as I publish them. No spam, unsubscribe anytime.</p>
         </div>
         <div class="form-card">
-          <form id="subForm" novalidate action="[YOUR_EMAIL_FORM_ENDPOINT]" method="post">
+          <form id="subForm" novalidate>
             <div class="field">
               <label for="fname">First name</label>
               <input id="fname" name="name" type="text" autocomplete="given-name" placeholder="Your name">
@@ -760,7 +759,7 @@
       <h3 id="popTitle">Get updates &amp; new resources</h3>
     </div>
     <div class="pop-body">
-      <form class="pop-form" id="popForm" novalidate action="[YOUR_EMAIL_FORM_ENDPOINT]" method="post">
+      <form class="pop-form" id="popForm" novalidate>
         <p>Join the list for new articles, free resources and news — straight to your inbox. No spam, unsubscribe anytime.</p>
         <div class="field">
           <label for="popEmail">Email address</label>
@@ -778,6 +777,48 @@
     </div>
   </div>
 </div>
+
+<script>
+  // ===== SITE CONFIG — paste your two Google links here (see README) =====
+  window.SITE_CONFIG = {
+    // Google Apps Script web app URL that saves signups to a Google Sheet (ends in /exec)
+    SHEET_ENDPOINT: '',
+    // Google Calendar appointment page link, e.g. https://calendar.app.google/XXXXXXXX
+    BOOKING_URL: '',
+    // Optional: embeddable version, e.g. https://calendar.google.com/calendar/appointments/schedules/XXXX?gv=true
+    BOOKING_EMBED_URL: ''
+  };
+
+  // Sends a signup to Google. Resolves true if sent (or if not yet configured, so the page still shows a demo success).
+  window.sendSignup = function (data) {
+    var url = (window.SITE_CONFIG.SHEET_ENDPOINT || '').trim();
+    if (!url) return Promise.resolve(true);
+    var body = new URLSearchParams(data).toString();
+    // Apps Script web apps don't send CORS headers, so use no-cors; the request still lands in the Sheet.
+    return fetch(url, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+      .then(function () { return true; })
+      .catch(function () { return false; });
+  };
+
+  // Booking: button + optional embedded schedule
+  (function () {
+    var c = window.SITE_CONFIG, btn = document.getElementById('bookBtn'), box = document.getElementById('bookEmbed');
+    var link = (c.BOOKING_URL || '').trim(), embed = (c.BOOKING_EMBED_URL || '').trim();
+    if (btn) {
+      if (link) { btn.href = link; }
+      else { btn.removeAttribute('target'); }
+    }
+    if (box && embed) {
+      var f = document.createElement('iframe');
+      f.src = embed; f.title = 'Book an appointment with Abdulrahman Suddy'; f.loading = 'lazy';
+      f.style.cssText = 'width:100%;height:640px;border:0;display:block;';
+      box.innerHTML = ''; box.appendChild(f);
+    } else if (box && link) {
+      var ph = box.querySelector('.booking-ph p');
+      if (ph) ph.innerHTML = 'Pick a time that suits you on Google Calendar.<br><br><a class="btn primary" href="' + link.replace(/"/g, '&quot;') + '" target="_blank" rel="noopener">Choose a time</a>';
+    }
+  })();
+</script>
 
 <script>
   (function () {
@@ -825,13 +866,12 @@
       var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
       if (!ok) { e.preventDefault(); err.textContent = 'Please enter a valid email address.'; email.focus(); return; }
       err.textContent = '';
-      var action = form.getAttribute('action') || '';
-      // Until a real endpoint is wired, show success locally instead of navigating to the placeholder.
-      if (!action || action.charAt(0) === '[') {
-        e.preventDefault();
-        form.classList.add('sent');
-      }
-      // If a real endpoint IS set, the form submits normally to your provider.
+      e.preventDefault();
+      var nm = document.getElementById('fname');
+      window.sendSignup({ email: val, name: nm ? nm.value.trim() : '', source: 'newsletter' }).then(function (ok) {
+        if (ok) form.classList.add('sent');
+        else err.textContent = 'Something went wrong. Please try again.';
+      });
     });
   })();
 </script>
@@ -860,9 +900,12 @@
       var val = (email.value || '').trim();
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) { e.preventDefault(); err.textContent = 'Please enter a valid email address.'; email.focus(); return; }
       err.textContent = '';
-      try { localStorage.setItem(KEY, '1'); } catch (e2) {}
-      var action = form.getAttribute('action') || '';
-      if (!action || action.charAt(0) === '[') { e.preventDefault(); form.classList.add('sent'); setTimeout(function () { close(false); }, 2400); }
+      e.preventDefault();
+      window.sendSignup({ email: val, name: '', source: 'popup' }).then(function (ok) {
+        if (!ok) { err.textContent = 'Something went wrong. Please try again.'; return; }
+        try { localStorage.setItem(KEY, '1'); } catch (e2) {}
+        form.classList.add('sent'); setTimeout(function () { close(false); }, 2400);
+      });
     });
   })();
 </script>
