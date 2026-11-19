@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hafnafkaz.github.io/abdulrahman-suddy/sitemap.xml

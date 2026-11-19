@@ -39,3 +39,16 @@ Appointment schedules need a Google account that supports them (a personal Gmail
 ## Publishing changes
 
 Push to `main`; GitHub Pages redeploys in about a minute.
+
+## Search and AI visibility
+
+- Every guide has: a direct "quick answer", table of contents, FAQ, Article + FAQ + Breadcrumb structured data, author details, canonical and `hreflang` links between English and Kiswahili versions.
+- `sitemap.xml` lists every page. Submit it in Google Search Console and Bing Webmaster Tools (see below).
+- `llms.txt` gives AI tools a plain summary of the site and its key guides.
+- Pages are generated from `D:\Projects\abdulrahman-suddy-content\build` (`node articles.mjs`, then `SKIP_OLD_INDEX=1 node build2.mjs`).
+
+### To do in your own accounts (cannot be done from the repo)
+1. Google Search Console: add the property `https://hafnafkaz.github.io/abdulrahman-suddy/`, verify it, then submit `sitemap.xml`.
+2. Bing Webmaster Tools: import from Search Console.
+3. Strongly consider a custom domain (for example abdulrahmansuddy.com). A project site on `github.io` shares authority with the whole `hafnafkaz.github.io` domain, and `robots.txt` and `sitemap` can only live at the domain root on a custom domain.
+4. Link to these guides from your Instagram, TikTok, YouTube and LinkedIn bios and posts. Links from your own profiles help search engines and AI tools trust the pages.

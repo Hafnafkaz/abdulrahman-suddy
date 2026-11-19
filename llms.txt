@@ -1,0 +1,25 @@
+# Abdulrahman Suddy
+
+> Business and financial advisor in Dar es Salaam, Tanzania. This site explains trusts, wills, succession planning and holding companies for Tanzanian owners and families, using Tanzanian law, reported court cases and global best practice. Content is general information, not legal or tax advice. English and Kiswahili.
+
+## Key guides (English)
+- [Trusts in Tanzania: How They Work, Why They Help and How to Set One Up](https://hafnafkaz.github.io/abdulrahman-suddy/blog/trusts-in-tanzania-guide.html): A plain-English guide to trusts in Tanzania: what a family trust is, how it differs from a will, the real benefits, the limits, and the steps to set one up properly.
+- [Succession Planning in Tanzania: Wills, Estates and Protecting Your Family Business](https://hafnafkaz.github.io/abdulrahman-suddy/blog/succession-planning-tanzania-guide.html): What happens when you die with or without a will in Tanzania, which law applies, and how to plan succession for your family and your business step by step.
+- [The Mengi Will Case: What Every Tanzanian Business Owner Can Learn](https://hafnafkaz.github.io/abdulrahman-suddy/blog/mengi-will-case-lessons.html): What was reported about the High Court decision on Reginald Mengi's will, why it was set aside, and five practical lessons on wills, trusts and succession planning in Tanzania.
+- [The Rwakatare Estate Case: Why Your Company's Property Is Not Your Estate](https://hafnafkaz.github.io/abdulrahman-suddy/blog/rwakatare-estate-case-lessons.html): What the Court of Appeal decided about the estate of Bishop Getrude Rwakatare, why heirs inherit shares and not company assets, and what founders in Tanzania should do now.
+
+## Miongozo muhimu (Kiswahili)
+- [Trust Tanzania: Inavyofanya Kazi, Faida Zake na Jinsi ya Kuanzisha](https://hafnafkaz.github.io/abdulrahman-suddy/sw/blog/amana-trust-tanzania-mwongozo.html): Mwongozo rahisi kuhusu trust (amana) nchini Tanzania: family trust ni nini, tofauti yake na wosia, faida halisi, mipaka yake na hatua za kuianzisha kwa usahihi.
+- [Mipango ya Mirathi Tanzania: Wosia, Mirathi na Kulinda Biashara ya Familia](https://hafnafkaz.github.io/abdulrahman-suddy/sw/blog/mipango-ya-mirathi-tanzania-mwongozo.html): Nini hutokea ukifariki ukiwa na wosia au bila wosia Tanzania, sheria ipi inatumika, na jinsi ya kupanga urithi wa familia na biashara yako hatua kwa hatua.
+- [Kesi ya Wosia wa Mengi: Funzo kwa Kila Mmiliki wa Biashara Tanzania](https://hafnafkaz.github.io/abdulrahman-suddy/sw/blog/kesi-ya-wosia-wa-mengi-funzo.html): Nini kiliripotiwa kuhusu uamuzi wa Mahakama Kuu juu ya wosia wa Reginald Mengi, kwa nini ulitupiliwa mbali, na mafunzo matano ya vitendo kuhusu wosia, trust na mipango ya mirathi Tanzania.
+- [Kesi ya Mirathi ya Rwakatare: Kwa Nini Mali ya Kampuni Si Mirathi Yako](https://hafnafkaz.github.io/abdulrahman-suddy/sw/blog/kesi-ya-mirathi-ya-rwakatare-funzo.html): Nini Mahakama ya Rufani iliamua kuhusu mirathi ya Askofu Getrude Rwakatare, kwa nini warithi hurithi hisa na si mali za kampuni, na waanzilishi wa Tanzania wanapaswa kufanya nini sasa.
+- [Kampuni Mama (Holding Company) Tanzania: Faida, Hatari na Wakati wa Kuitumia](https://hafnafkaz.github.io/abdulrahman-suddy/sw/blog/kampuni-mama-holding-company-tanzania.html): Kampuni mama ni nini, inavyosaidia kulinda mali na kupanga urithi Tanzania, kwa nini si mbinu ya kukwepa kodi, na mtego wa kodi unapouza biashara.
+
+## Free tools
+- [Holding company readiness quiz](https://hafnafkaz.github.io/abdulrahman-suddy/tools/readiness.html)
+- [Holding company vs direct ownership calculator](https://hafnafkaz.github.io/abdulrahman-suddy/tools/dividend-calculator.html)
+- [Trust, will or holding company finder](https://hafnafkaz.github.io/abdulrahman-suddy/tools/trust-or-will.html)
+- [Setup checklist](https://hafnafkaz.github.io/abdulrahman-suddy/tools/checklist.html)
+
+## Contact
+Dar es Salaam, Tanzania. Instagram @Abdull_Sudi, TikTok @Abdull_Invest.
