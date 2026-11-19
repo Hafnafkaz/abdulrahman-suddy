@@ -337,6 +337,7 @@
   @media (max-width: 960px) { .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .booking-grid { grid-template-columns: 1fr; } }
   @media (max-width: 560px) { .blog-grid { grid-template-columns: 1fr; } }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
+  a.post-card { color: inherit; } a.post-card:hover { color: inherit; } .post-more { cursor: pointer; color: var(--orange); }
 </style>
 </head>
 <body>
@@ -350,6 +351,7 @@
     <nav class="nav-links" aria-label="Primary">
       <a class="navlink" href="#about">About</a>
       <a class="navlink" href="#work">What I do</a>
+      <a class="navlink" href="#tools">Free tools</a>
       <a class="navlink" href="#resources">Resources</a>
       <a class="navlink" href="#blog">Blog</a>
       <a class="navlink" href="#book">Book a call</a>
@@ -480,6 +482,47 @@
   </div>
 </section>
 
+<!-- ============================ FREE TOOLS ============================ -->
+<section id="tools">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Free tools</span>
+      <h2>Work out your <b>structure</b>, free.</h2>
+      <p>Interactive tools for owners and founders: do you need a holding company, what it costs in shillings, and whether a trust or a will comes first. Built on Tanzanian rules.</p>
+    </div>
+    <div class="blog-grid">
+      <a class="post-card reveal" href="tools/readiness.html">
+        <div class="post-thumb"><span class="post-cat">Quiz</span></div>
+        <div class="post-body">
+          <span class="post-meta">2 minutes</span>
+          <h3>Do you need a holding company?</h3>
+          <p>Ten questions and a score out of 100, with the tax traps that apply to you.</p>
+          <span class="post-more">Take the quiz <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+        </div>
+      </a>
+      <a class="post-card reveal" href="tools/dividend-calculator.html">
+        <div class="post-thumb"><span class="post-cat">Calculator</span></div>
+        <div class="post-body">
+          <span class="post-meta">Try it</span>
+          <h3>Holding company or direct ownership?</h3>
+          <p>See the tax difference in shillings every year and when you sell.</p>
+          <span class="post-more">Open the calculator <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+        </div>
+      </a>
+      <a class="post-card reveal" href="tools/trust-or-will.html">
+        <div class="post-thumb"><span class="post-cat">Finder</span></div>
+        <div class="post-body">
+          <span class="post-meta">90 seconds</span>
+          <h3>Trust, will or holding company?</h3>
+          <p>Six questions to find the structure that fits your goal and what to ask your advocate.</p>
+          <span class="post-more">Find my fit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+        </div>
+      </a>
+    </div>
+    <p class="blog-note"><span class="two-square" style="width:20px;height:20px;"><i></i><i></i></span> Also: <a href="tools/checklist.html">the 21-step setup checklist</a> &middot; <a href="tools/">all free tools</a></p>
+  </div>
+</section>
+
 <!-- ============================ RESOURCES / DOWNLOADS ============================ -->
 <section id="resources">
   <div class="wrap">
@@ -560,41 +603,35 @@
       <p>Writing on the decisions that shape a business and a family's wealth — valuation, raising capital, M&amp;A, succession and structuring. New pieces land here first.</p>
     </div>
     <div class="blog-grid">
-      <article class="post-card reveal">
-        <div class="post-thumb"><span class="post-cat">Valuation</span></div>
+      <a class="post-card reveal" href="blog/holding-company-tanzania.html">
+        <div class="post-thumb"><span class="post-cat">Holding companies</span></div>
         <div class="post-body">
-          <span class="post-meta">[Date] · [X] min read</span>
-          <h3>[Article title — e.g. What your business is really worth]</h3>
-          <p>[One or two sentences previewing the article so a reader knows what they'll get.]</p>
-          <span class="post-more">Read article
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-          </span>
+          <span class="post-meta">19 Nov 2026 · 8 min read</span>
+          <h3>Do you need a holding company in Tanzania?</h3>
+          <p>The real tax rates, a worked example in shillings, and the exit-tax trap most founders miss.</p>
+          <span class="post-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
         </div>
-      </article>
-      <article class="post-card reveal">
-        <div class="post-thumb"><span class="post-cat">M&amp;A</span></div>
+      </a>
+      <a class="post-card reveal" href="blog/trust-will-or-holding-company.html">
+        <div class="post-thumb"><span class="post-cat">Trusts &amp; estates</span></div>
         <div class="post-body">
-          <span class="post-meta">[Date] · [X] min read</span>
-          <h3>[Article title — e.g. Preparing to sell without losing control]</h3>
-          <p>[One or two sentences previewing the article so a reader knows what they'll get.]</p>
-          <span class="post-more">Read article
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-          </span>
+          <span class="post-meta">19 Nov 2026 · 8 min read</span>
+          <h3>Trust, will or holding company?</h3>
+          <p>Three tools for three different jobs, and how Tanzanian law shapes which one you start with.</p>
+          <span class="post-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
         </div>
-      </article>
-      <article class="post-card reveal">
-        <div class="post-thumb"><span class="post-cat">Succession</span></div>
+      </a>
+      <a class="post-card reveal" href="blog/lessons-from-global-families.html">
+        <div class="post-thumb"><span class="post-cat">Global lessons</span></div>
         <div class="post-body">
-          <span class="post-meta">[Date] · [X] min read</span>
-          <h3>[Article title — e.g. Passing wealth to the next generation]</h3>
-          <p>[One or two sentences previewing the article so a reader knows what they'll get.]</p>
-          <span class="post-more">Read article
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-          </span>
+          <span class="post-meta">19 Nov 2026 · 7 min read</span>
+          <h3>What Alphabet, Tata and IKEA teach founders</h3>
+          <p>Four famous ownership structures and which ideas are practical here.</p>
+          <span class="post-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
         </div>
-      </article>
+      </a>
     </div>
-    <p class="blog-note"><span class="two-square" style="width:20px;height:20px;"><i></i><i></i></span> More articles coming soon — subscribe to get them first.</p>
+    <p class="blog-note"><span class="two-square" style="width:20px;height:20px;"><i></i><i></i></span> <a href="blog/">See all articles</a> &middot; More coming soon. Subscribe to get them first.</p>
   </div>
 </section>
 

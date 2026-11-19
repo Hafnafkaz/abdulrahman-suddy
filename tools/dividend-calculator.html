@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#EA6134">
+<title>Holding Company vs Direct Ownership Calculator (Tanzania)</title>
+<meta name="description" content="See in shillings whether a holding company saves or costs you tax in Tanzania: dividend withholding, reinvestment, and the capital gains exit trap.">
+<link rel="canonical" href="https://hafnafkaz.github.io/abdulrahman-suddy/tools/dividend-calculator.html">
+<meta property="og:title" content="Holding Company vs Direct Ownership Calculator (Tanzania)"><meta property="og:description" content="See in shillings whether a holding company saves or costs you tax in Tanzania: dividend withholding, reinvestment, and the capital gains exit trap."><meta property="og:type" content="website"><meta property="og:url" content="https://hafnafkaz.github.io/abdulrahman-suddy/tools/dividend-calculator.html">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito+Sans:wght@400;600;700&family=Caveat:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/brand.css">
+
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="../" class="nav-sig" aria-label="Abdulrahman Suddy, home"><span class="sig-name">Abdulrahman Suddy</span><span class="cat">Business &amp; Financial Advisory</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="navlink" href="../#about">About</a>
+      <a class="navlink" href="../tools/">Free tools</a>
+      <a class="navlink" href="../blog/">Blog</a>
+      <a class="navlink" href="../#book">Book a call</a>
+      <button class="theme-toggle" id="themeBtn" type="button" aria-label="Switch theme" title="Switch theme"><svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle></svg></button>
+    </nav>
+  </div>
+</header>
+
+<section class="page-head"><span class="blob"></span><span class="blob b"></span>
+  <div class="wrap"><div class="inner">
+    <div class="crumb"><a href="../">Home</a> / <a href="./">Free tools</a> / Dividend calculator</div>
+    <span class="kicker">Free tool</span>
+    <h1>Holding company or <b>direct ownership?</b></h1><p class="lede">Enter your numbers and see the tax difference in shillings, year by year and on exit. Rates are today’s Tanzanian defaults, and you can change them.</p>
+    <div class="pills"><span class="pill">Tanzania rates</span><span class="pill n">Edit any rate</span><span class="pill n">Free</span></div>
+  </div></div>
+</section>
+<section style="padding-top:8px"><div class="wrap">
+  <form class="calc" id="calcForm" onsubmit="return false">
+    <div class="card inputs">
+      <div class="seg"><button type="button" class="on" data-m="annual">Every year</button><button type="button" data-m="exit">If I sell</button></div>
+      <div id="annualBox" class="inputs" style="display:grid;gap:16px">
+        <div class="field"><label for="profit">Operating company profit before tax (TZS per year)</label><input id="profit" inputmode="decimal" value="300,000,000"></div>
+        <div class="field"><label for="payout">Share of after-tax profit paid out as dividends (%)</label><input id="payout" inputmode="decimal" value="60"></div>
+        <div class="field"><label for="reinvest">Of what the holdco receives, share it reinvests (%)</label><input id="reinvest" inputmode="decimal" value="70"><div class="hint">Reinvested money stays inside the holdco, with no second dividend tax.</div></div>
+      </div>
+      <div id="exitBox" class="inputs" style="display:none;gap:16px">
+        <div class="field"><label for="gain">Expected gain on selling the operating company (TZS)</label><input id="gain" inputmode="decimal" value="1,000,000,000"><div class="hint">Sale price minus what you paid for the shares.</div></div>
+      </div>
+      <div class="field"><label for="value">Value of shares you would move into the holdco (TZS)</label><input id="value" inputmode="decimal" value="500,000,000"><div class="hint">Used for the one-off 1% stamp duty on a share transfer.</div></div>
+      <details class="adv"><summary>Change the tax rates</summary>
+        <div class="mini">
+          <div class="field"><label for="cit">Company tax %</label><input id="cit" inputmode="decimal" value="30"></div><div class="field"><label for="whtInd">Dividend WHT to you %</label><input id="whtInd" inputmode="decimal" value="10"></div>
+          <div class="field"><label for="whtHold">Dividend WHT to holdco %</label><input id="whtHold" inputmode="decimal" value="5"><div class="hint">25%+ shares and votes</div></div><div class="field"><label for="stamp">Stamp duty on shares %</label><input id="stamp" inputmode="decimal" value="1"></div>
+          <div class="field"><label for="cgtInd">Capital gains: individual %</label><input id="cgtInd" inputmode="decimal" value="10"></div><div class="field"><label for="cgtCo">Capital gains: company %</label><input id="cgtCo" inputmode="decimal" value="30"></div>
+        </div>
+        <p style="margin-top:12px"><button type="button" class="btn ghost" id="resetRates" style="height:42px;font-size:13px">Reset to defaults</button></p>
+      </details>
+    </div>
+    <div>
+      <div id="out"></div>
+      <div style="margin-top:20px">
+<div class="gate" id="gate">
+  <h3>Get these numbers as a one-page summary</h3><p>Leave your email and I will send the setup checklist plus new Tanzania tax notes as they change.</p>
+  <form data-gate="tool:calculator" novalidate>
+    <div class="field"><label for="g-name">First name</label><input id="g-name" name="name" type="text" autocomplete="given-name" placeholder="Your name"></div>
+    <div class="field"><label for="g-email">Email address</label><input id="g-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+    <button class="btn primary" type="submit">Send it to me</button>
+    <div class="err-msg" role="alert"></div>
+  </form>
+</div></div>
+      <p class="src">Sources: PwC Worldwide Tax Summaries, Tanzania (reviewed 9 September 2026) for company tax, withholding and capital gains rates; Clyde &amp; Co. on the Finance Act 2026 for the deemed dividend rule; TRA stamp duty schedule for 1% on share transfers.</p>
+    </div>
+  </form>
+  <div style="margin-top:28px;max-width:900px"><p class="disclaimer">General information for Tanzania mainland, checked against published sources in November 2026. It is not legal or tax advice. Rates and rules change, so confirm with the TRA, BRELA and a Tanzanian advocate before you act.</p></div>
+</div></section>
+
+<footer class="site"><div class="wrap foot-inner">
+  <div class="foot-sig"><div class="sig-name">Abdulrahman Suddy</div><div class="cat">Business &amp; Financial Advisory</div></div>
+  <div class="foot-copy">&copy; <span id="yr"></span> Abdulrahman Suddy &middot; +255 748 501 117<br>General information only, not legal or tax advice.</div>
+</div></footer>
+<script src="../assets/app.js"></script>
+<script>window.wireGates();window.onGateOpen=function(){var g=document.getElementById('gate');g.innerHTML='<h3>Sent. Check your inbox soon.</h3><p>Meanwhile, <a href="checklist.html" style="color:#fff;text-decoration:underline">open the setup checklist</a>.</p>';};</script>
+<script src="../assets/dividend-calc.js"></script>
+</body>
+</html>
